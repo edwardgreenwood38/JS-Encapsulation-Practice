@@ -13,7 +13,7 @@ const ingredientList = {
         ingredientUl.innerHTML = '';
 
         ingredients.forEach(ingredient => {
-            const ingredientDiv = ingredientList.renderIngredientCard(ingredient);
+            const ingredientDiv = this.renderIngredientCard(ingredient);
             ingredientUl.append(ingredientDiv)
         })
     },
@@ -45,7 +45,7 @@ const ingredientList = {
         `
         const toggleButton = ingredientCard.querySelector('.toggle-button')
         toggleButton.addEventListener('click', () => {
-            toggleIngredient(ingredient)
+            ingredientList.toggleIngredient(ingredient)
         })
 
         return ingredientCard
@@ -62,6 +62,6 @@ const ingredientList = {
         }
         saveSelectedSandwich()
         renderCart()
-        renderIngredientList()
+        ingredientList.render()
     }
 }
