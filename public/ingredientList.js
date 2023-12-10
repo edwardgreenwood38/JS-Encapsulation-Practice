@@ -6,20 +6,20 @@ const ingredientList = {
 
 
     // Updates the DOM to display a list of ingredients
-    renderIngredientList: function() {
+    render: function() {
         const ingredientUl = document.querySelector('.ingredient-list');
 
         // Empty the ingredientList before adding any content to it.
         ingredientUl.innerHTML = '';
 
         ingredients.forEach(ingredient => {
-            const ingredientDiv = renderIngredientCard(ingredient);
+            const ingredientDiv = ingredientList.renderIngredientCard(ingredient);
             ingredientUl.append(ingredientDiv)
         })
     },
 
     // Creates a DIV to display a single ingredient
-    render: function(ingredient) {
+    renderIngredientCard: function(ingredient) {
         const ingredientCard = document.createElement('div');
         ingredientCard.className = 'card'
 
